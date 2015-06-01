@@ -90,7 +90,8 @@ angular.module('myApp.services', [])
          * @constructor
          */
         var Comments = function(data){
-            this.author = authors[2];
+            // this.author always used to be authors[2], fixed to work with real comment author if exists
+            this.author = data.author || authors[2];
             this.txt = data.txt || '';
             this.createdAt = data.createdAt || new Date();
             this.comments = [];

@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="lib/normalize.css/normalize.css"/>
     <link rel="stylesheet" href="lib/angular/angular-csp.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
 </head>
 <body ng-app="myApp" class="ng-cloak">
-    <main>
+    <main ng-controller="commentsCTRL">
         <h2>Lorem ipsum dolor sit amet. <small>{{'2015-05-30T08:17:38.136Z' | time}}</small></h2>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corporis distinctio doloribus expedita
@@ -40,14 +41,36 @@
             </ul>
         </section>
 
-        <comments></comments>
+
+
+
+        <section>
+
+            <h3>Comments</h3>
+
+            <div class="container">
+                <ul style="list-style:none">
+                    <li  ng-repeat="comment in items">
+                        <comments item = 'comment'></comments>
+                    </li>
+                </ul>
+
+            </div><!-- /container -->
+        </section>
+
+
+
+        <!--</div>-->
     </main>
 
     <script src="lib/angular/angular.js"></script>
-
     <script src="js/services.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/RecursionHelper.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/commentsCTRL.js"></script>
+    <script href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 </body>
 </html>

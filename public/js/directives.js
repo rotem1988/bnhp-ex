@@ -1,14 +1,19 @@
 'use strict';
 
-angular.module('myApp.directives', [])
-    .directive('comments', [function(){
+angular.module('myApp.directives', ['myApp.RecursionHelper'])
+    .directive('comments', ['RecursionHelper',function(RecursionHelper){
         return {
             restrict: 'E',
-            replace: true,
-            templateUrl : 'templates/directives/comments.html',
-            scope : {},
-            link : function(scope, element){
-                //TODO: Add your code
+
+            templateUrl : 'templates/comment.html',
+            scope : {
+                item: "="
+            },
+            compile: function(element) {
+                return RecursionHelper.compile(element, function(scope, iElement, iAttrs, controller, transcludeFn){
+
+                });
             }
+
         }
     }]);

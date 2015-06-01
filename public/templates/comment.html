@@ -1,0 +1,31 @@
+<div>
+<div class="row">
+    {{comment}}
+    <div class="col-sm-1">
+        <div class="thumbnail">
+            <img class="img-responsive user-photo" src={{item.author.image}}>
+        </div><!-- /thumbnail -->
+    </div><!-- /col-sm-1 -->
+
+    <div class="col-sm-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>{{item.author.fName}}</strong> <span class="text-muted"> on {{item.createdAt | date:'yyyy-MM-dd'}} at {{item.createdAt | date:'HH:mm:ss'}} </span>
+                <a href class="pull-right" ng-click="replayClick(item)"> Replay</a>
+            </div>
+            <div class="panel-body">
+                {{item.txt}}
+            </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+    </div><!-- /col-sm-5 -->
+
+</div><!-- /row -->
+    <ul style="list-style:none">
+        <li ng-repeat="comment in item.comments">
+            <comments item = 'comment'>
+
+            </comments>
+        </li>
+    </ul>
+</div>
+
